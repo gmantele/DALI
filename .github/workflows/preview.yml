@@ -45,7 +45,9 @@ jobs:
 
     - name: Remove the former PDF preview
       run: |
-        gh release list --exclude-drafts --json 'isPrerelease,tagName' --jq '.[] | select(.isPrerelease == true and .tagName == "${{ env.tag_preview }}") | .tagName' | xargs -n 1 echo gh release delete --cleanup-tag
+        gh release list --exclude-drafts --json 'isPrerelease,tagName'
+        gh release list --exclude-drafts --json 'isPrerelease,tagName' --jq '.[] | select(.isPrerelease == true and .tagName == "${{ env.tag_preview }}") | .tagName'
+        gh release list --exclude-drafts --json 'isPrerelease,tagName' --jq '.[] | select(.isPrerelease == true and .tagName == "${{ env.tag_preview }}") | .tagName' | xargs -n 1 gh release delete --cleanup-tag
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
