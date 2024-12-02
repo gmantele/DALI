@@ -11,3 +11,4 @@ Ideas for inclusion into DALI-1.2 can be found on the
 <a href="https://wiki.ivoa.net/twiki/bin/view/IVOA/DALI-1_1-Next">DALI-1_1-Next</a>
 wiki page.
 
+Blabla
